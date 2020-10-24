@@ -60,7 +60,9 @@ public class Player : MonoBehaviour, ICharacter
         Speed = 1;
         _animator = GetComponentInChildren<Animator>();
         biteAnimator = BiteAttack.GetComponent<Animator>();
-        
+
+        AttackDamage = 50;
+
         Health = maxHealth;
         HealthBar.SetMaxHealth(maxHealth);
         HealthBar.SetHealth(maxHealth);
@@ -86,6 +88,7 @@ public class Player : MonoBehaviour, ICharacter
         foreach (Collider2D enemyHit in enemiesHit)
         {
             Debug.Log("bitten" + enemyHit.name);
+            enemyHit.GetComponent<Npc>().TakeDamage(AttackDamage);
         }
 
         Debug.Log("Attack Performed");

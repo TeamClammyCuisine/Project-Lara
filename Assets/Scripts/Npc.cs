@@ -18,6 +18,9 @@ public class Npc : MonoBehaviour, ICharacter
         set => speed = value;
     }
     public float Health { get; set; }
+    public float maxHealth = 100;
+    bool alive;
+
     public float AttackDamage { get; set; }
     public float AttackSpeed { get; set; }
     //The point to move to
@@ -26,6 +29,7 @@ public class Npc : MonoBehaviour, ICharacter
     private Seeker _seeker;
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
+    private static readonly int TakingDamage = Animator.StringToHash("TakingDamage");
     //The calculated path
     public Path path;
 
@@ -43,6 +47,8 @@ public class Npc : MonoBehaviour, ICharacter
     {
         _animator = NPC.GetComponent<Animator>();
         _seeker = GetComponent<Seeker>();
+        Health = maxHealth;
+        alive = true;
 
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         
@@ -61,14 +67,42 @@ public class Npc : MonoBehaviour, ICharacter
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        if (alive)
+        {
+            StartCoroutine(playDamageEffects());
+            Health -= damage;
+            if (Health <= 0) Die();
+        }
+    }
+
+    IEnumerator playDamageEffects()
+    {
+        _animator.SetBool(TakingDamage, true);
+        //playParticleEffectBlood
+        yield return new WaitForSeconds(0.2f);
+        _animator.SetBool(TakingDamage, false);
+
+    }
+
+
+    void Die()
+    {
+        Debug.Log("this dude died");
+        _animator.SetTrigger("Dead");
+        alive = false;
+        GetComponent<Collider2D>().enabled = false;
+    }
+
     public void FixedUpdate ()
     {
-        
-        if (path == null)
-        {
-            //We have no path to move after yet
-            return;
-        }
+        if (true) return;
+        //if (path == null)
+        //{
+        //    //We have no path to move after yet
+        //    return;
+        //}
 
         if (_currentWaypoint >= path.vectorPath.Count)
         {

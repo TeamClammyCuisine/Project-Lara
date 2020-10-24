@@ -85,7 +85,7 @@ public class Npc : MonoBehaviour, ICharacter
             _animator.SetBool(IsWalking, true);
         else
             _animator.SetBool(IsWalking, false);
-        //
+        
         if (x<0)
             NPC.transform.rotation = Quaternion.Euler(0, 180, 0);
         else if (x>0)
@@ -97,13 +97,6 @@ public class Npc : MonoBehaviour, ICharacter
         
         transform.Translate( dir );
         
-        // x *= Time.fixedDeltaTime * speed;
-        // y *= Time.fixedDeltaTime * speed; 
-        //             
-        // transform.Translate(x,y,0);
-      
-
-        //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
         if (Vector3.Distance( transform.position, path.vectorPath[ _currentWaypoint ] ) < nextWaypointDistance)
         {

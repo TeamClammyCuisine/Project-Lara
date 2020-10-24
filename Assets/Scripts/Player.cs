@@ -88,7 +88,7 @@ public class Player : MonoBehaviour, ICharacter
         foreach (Collider2D enemyHit in enemiesHit)
         {
             Debug.Log("bitten" + enemyHit.name);
-            enemyHit.GetComponent<Npc>().TakeDamage(AttackDamage);
+            enemyHit.GetComponent<Npc>().GetBitten(AttackDamage);
         }
 
         Debug.Log("Attack Performed");
@@ -172,12 +172,25 @@ public class Player : MonoBehaviour, ICharacter
 
     private void OnEnable()
     {
+        Npc.NpcEaten += onNpcEaten;
         _controls.Enable();
     }
 
     private void OnDisable()
     {
         _controls.Disable();
+        Npc.NpcEaten -= onNpcEaten;
+    }
+
+    void onNpcEaten()
+    {
+        if (alive)
+        {
+            //_animator.SetBool(Eating, false);
+            Hunger += 50;
+            if (Hunger > maxHunger) Hunger = maxHunger;
+            HungerBar.SetHunger(Hunger);
+        }
     }
 
     public void Die()

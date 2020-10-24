@@ -21,6 +21,10 @@ public class Npc : MonoBehaviour, ICharacter
     public float maxHealth = 100;
     bool alive;
 
+    public delegate void NpcDelegate();
+    public static event NpcDelegate NpcEaten;
+    public int nutritionValue;
+
     public float AttackDamage { get; set; }
     public float AttackSpeed { get; set; }
     //The point to move to
@@ -67,6 +71,15 @@ public class Npc : MonoBehaviour, ICharacter
         }
     }
 
+    public void GetBitten(float damage)
+    {
+        if (alive)
+        {
+            TakeDamage(damage);
+        }
+        else getEaten();
+    }
+
     public void TakeDamage(float damage)
     {
         if (alive)
@@ -75,6 +88,13 @@ public class Npc : MonoBehaviour, ICharacter
             Health -= damage;
             if (Health <= 0) Die();
         }
+    }
+
+    void getEaten()
+    {
+        Debug.Log("this dude got eaten");
+        NpcEaten();
+        Destroy(gameObject);
     }
 
     IEnumerator playDamageEffects()
@@ -86,13 +106,11 @@ public class Npc : MonoBehaviour, ICharacter
 
     }
 
-
     void Die()
     {
-        Debug.Log("this dude died");
         _animator.SetTrigger("Dead");
         alive = false;
-        GetComponent<Collider2D>().enabled = false;
+        //GetComponent<Collider2D>().enabled = false;
     }
 
     public void FixedUpdate ()

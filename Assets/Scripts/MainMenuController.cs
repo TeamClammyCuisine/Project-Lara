@@ -10,17 +10,6 @@ public class MainMenuController : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Options;
     public GameObject Help;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void MenuPlay()
     {

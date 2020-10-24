@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trees
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Flames
+    uniqueID: 3674778351
+    locked: 0
+  - name: Trees
+    uniqueID: 2337766813
+    locked: 0
+  - name: Leaves
+    uniqueID: 987050671
+    locked: 0
+  - name: Rocks
+    uniqueID: 2593168005
+    locked: 0
+  - name: Stumps
+    uniqueID: 4266669433
+    locked: 0
+  - name: Tents
+    uniqueID: 826888905
     locked: 0

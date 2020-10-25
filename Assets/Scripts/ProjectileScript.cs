@@ -80,7 +80,7 @@ public class ProjectileScript : MonoBehaviour
             flying = false;
             _rigidBody.velocity = Vector3.zero;
             var NpcController = col.gameObject.GetComponent<Npc>();
-            NpcController.TakeDamage(damage);
+            NpcController.TakeVenomDamage(damage);
             _animator.SetTrigger("Hit");
         }
         if (col.gameObject.tag == "Meltable")

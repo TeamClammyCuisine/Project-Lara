@@ -29,7 +29,7 @@ public class Player : MonoBehaviour, ICharacter
     public delegate void PlayerDelegate();
     public static event PlayerDelegate LaraDied;
 
-    public bool canSpit = true;
+    bool canSpit = false;
 
     public float Speed { get; set; }
 
@@ -112,10 +112,11 @@ public class Player : MonoBehaviour, ICharacter
         BiteAttack.SetActive(true);
         _animator.SetBool(Attacking, true);
         biteAnimator.SetBool(BiteEffect, true);
-        yield return new WaitForSeconds(biteSpeed);
-        BiteAttack.SetActive(false);
-        _animator.SetBool(Attacking, false);
+        yield return new WaitForSeconds(0.3f);
         biteAnimator.SetBool(BiteEffect, false);
+        BiteAttack.SetActive(false);
+        yield return new WaitForSeconds(biteSpeed);
+        _animator.SetBool(Attacking, false);
         biting = false;
     }
 
@@ -150,7 +151,7 @@ public class Player : MonoBehaviour, ICharacter
             var attacked = Convert.ToBoolean(_controls.Player.Atack.ReadValue<float>());
             var spit = Convert.ToBoolean(_controls.Player.Spit.ReadValue<float>());
 
-            if (spit && !spitting) StartCoroutine(SpitAttack());
+            if (spit && !spitting && canSpit) StartCoroutine(SpitAttack());
             if (attacked && !biting) Attack();
 
             var x = direction.x;
@@ -217,13 +218,20 @@ public class Player : MonoBehaviour, ICharacter
     private void OnEnable()
     {
         Npc.NpcEaten += onNpcEaten;
+        GameManager.UnlockLaraVenom += onUnlockVenom;
         _controls.Enable();
     }
 
     private void OnDisable()
     {
         _controls.Disable();
+        GameManager.UnlockLaraVenom += onUnlockVenom;
         Npc.NpcEaten -= onNpcEaten;
+    }
+
+    void onUnlockVenom()
+    {
+        canSpit = true;
     }
 
     void onNpcEaten()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NpcGen;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject Gui;
     public GameObject PoisonBar;
     public GameObject LaraDialogBubble;
-
+    private EnemyGenerator _enemyGenerator;
     public Text EnemyCounter;
 
     public delegate void GameManagerDelegate();
@@ -24,11 +25,12 @@ public class GameManager : MonoSingleton<GameManager>
     public int EnemiesOnZone3 = 15;
     public int EnemiesOnZone4 = 5;
 
-    private void Update()
+    private void Start()
     {
-        
+        currentZone = 1;
+        _enemyGenerator.Generate(currentZone, EnemiesOnZone1);
     }
-
+    
     void onLaraDied()
     {
         StartCoroutine(GameOver());
@@ -54,6 +56,8 @@ public class GameManager : MonoSingleton<GameManager>
                 LaraDialog(1);
                 currentNpcs = EnemiesOnZone2;
                 EnemyCounter.text = currentNpcs.ToString();
+                _enemyGenerator.Generate(currentZone, EnemiesOnZone2);
+                
                 break;
             case 2:
                 currentZone = 3;
@@ -61,6 +65,7 @@ public class GameManager : MonoSingleton<GameManager>
                 LaraDialog(2);
                 currentNpcs = EnemiesOnZone3;
                 EnemyCounter.text = currentNpcs.ToString();
+                _enemyGenerator.Generate(currentZone, EnemiesOnZone3);
                 break;
             case 3:
                 currentZone = 4;
@@ -68,6 +73,7 @@ public class GameManager : MonoSingleton<GameManager>
                 LaraDialog(3);
                 currentNpcs = EnemiesOnZone4;
                 EnemyCounter.text = currentNpcs.ToString();
+                _enemyGenerator.Generate(currentZone, EnemiesOnZone4);
                 break;
         }
     }

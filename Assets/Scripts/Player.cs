@@ -20,7 +20,7 @@ public class Player : MonoBehaviour, ICharacter
     private static readonly int MovingUp = Animator.StringToHash("MovingUp");
     private static readonly int MovingDown = Animator.StringToHash("MovingDown");
     private static readonly int TakingDamage = Animator.StringToHash("TakingDamage");
-    private static readonly int Dying = Animator.StringToHash("Dying");
+    private static readonly int Died = Animator.StringToHash("Died");
     private static readonly int Attacking = Animator.StringToHash("Attacking");
     private static readonly int BiteEffect = Animator.StringToHash("BiteEffect");
 
@@ -198,7 +198,7 @@ public class Player : MonoBehaviour, ICharacter
 
     public void Die()
     {
-        _animator.SetBool(Dying, false);
+        _animator.SetBool(Died, true);
         alive = false;
     }
 

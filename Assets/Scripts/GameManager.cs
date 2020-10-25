@@ -12,7 +12,7 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject Gui;
     public GameObject PoisonBar;
     public GameObject LaraDialogBubble;
-    private EnemyGenerator _enemyGenerator;
+    EnemyGenerator _enemyGenerator;
     public Text EnemyCounter;
 
     public delegate void GameManagerDelegate();
@@ -28,6 +28,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void Start()
     {
         currentZone = 1;
+        _enemyGenerator = GetComponent<EnemyGenerator>();
         _enemyGenerator.Generate(currentZone, EnemiesOnZone1);
     }
     
@@ -57,7 +58,6 @@ public class GameManager : MonoSingleton<GameManager>
                 currentNpcs = EnemiesOnZone2;
                 EnemyCounter.text = currentNpcs.ToString();
                 _enemyGenerator.Generate(currentZone, EnemiesOnZone2);
-                
                 break;
             case 2:
                 currentZone = 3;

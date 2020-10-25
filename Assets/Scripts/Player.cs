@@ -110,13 +110,13 @@ public class Player : MonoBehaviour, ICharacter
     {
         biting = true;
         BiteAttack.SetActive(true);
-        _animator.SetBool(Attacking, true);
+        //_animator.SetBool(Attacking, true);
         biteAnimator.SetBool(BiteEffect, true);
         yield return new WaitForSeconds(0.3f);
         biteAnimator.SetBool(BiteEffect, false);
         BiteAttack.SetActive(false);
         yield return new WaitForSeconds(biteSpeed);
-        _animator.SetBool(Attacking, false);
+        //_animator.SetBool(Attacking, false);
         biting = false;
     }
 
@@ -126,12 +126,12 @@ public class Player : MonoBehaviour, ICharacter
         {
             var projectile = Instantiate(venomProjectile, spitPoint.transform.position, Quaternion.identity);
             spitting = true;
-            _animator.SetBool(Attacking, true);
+            //_animator.SetBool(Attacking, true);
             Venom--;
             VenomBar.SetVenom(Venom);
             projectile.GetComponent<ProjectileScript>().SetDirection(facing);
             yield return new WaitForSeconds(biteSpeed);
-            _animator.SetBool(Attacking, false);
+            //_animator.SetBool(Attacking, false);
             spitting = false;
         }
     }

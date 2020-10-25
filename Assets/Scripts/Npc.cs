@@ -163,6 +163,7 @@ public class Npc : MonoBehaviour, ICharacter
         StartCoroutine(AttackEffect());
         foreach (Collider2D enemyHit in enemiesHit)
         {
+            Debug.Log(enemyHit.name);
             enemyHit.GetComponent<Player>().TakeDamage(20);
         }
     }

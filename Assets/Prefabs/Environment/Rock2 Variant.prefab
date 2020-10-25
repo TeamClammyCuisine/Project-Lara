@@ -7,6 +7,86 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].x
+      value: -0.36701608
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].y
+      value: -0.3727324
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_InstanceId
+      value: -98230
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePathHash
+      value: -592396595
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].x
+      value: 0.39788926
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].y
+      value: -0.35857844
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].x
+      value: -0.016609311
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].y
+      value: -0.36656666
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[6].y
+      value: 0.34111726
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[6].x
+      value: -0.14800346
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[5].x
+      value: -0.022705555
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[5].y
+      value: 0.09392047
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[4].x
+      value: 0.28170753
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[4].y
+      value: 0.13122344
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[7].x
+      value: -0.2918713
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[7].y
+      value: 0.2924664
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].x
+      value: 0.36093247
+      objectReference: {fileID: 0}
+    - target: {fileID: -7682299858301408043, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].y
+      value: -0.14241087
+      objectReference: {fileID: 0}
     - target: {fileID: 2985614491634697998, guid: ea95d49cf135b4c46881fe31a821bf95, type: 3}
       propertyPath: m_Offset.y
       value: -0.18

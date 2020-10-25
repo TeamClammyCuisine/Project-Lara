@@ -28,6 +28,10 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1246291682439101292, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246291682439101292, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
       propertyPath: m_ShapePath.Array.data[2].x
       value: 0.17658585
       objectReference: {fileID: 0}
@@ -206,6 +210,18 @@ PrefabInstance:
     - target: {fileID: 1246291682439101292, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
       propertyPath: m_ShapePath.Array.data[13].z
       value: 0.00000007521163
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246291682439101292, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -462752949
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246291682439101292, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -462752949
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246291682439101292, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: 273445991
       objectReference: {fileID: 0}
     - target: {fileID: 5297667498070923945, guid: 1cbe32516b0b50047a71ca57d31aab80, type: 3}
       propertyPath: m_LocalPosition.x

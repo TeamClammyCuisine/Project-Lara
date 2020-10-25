@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseOrder: 5000
   offset: 0
-  runOnce: 0
+  runOnce: 1
 --- !u!1001 &6407883922218534033
 PrefabInstance:
   m_ObjectHideFlags: 0

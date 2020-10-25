@@ -2,7 +2,6 @@
 using System.Linq;
 using UnityEngine;
 
-[ExecuteAlways]
 public class RenderSortingOrder : MonoBehaviour
 {
     private Renderer _renderer;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5272654580693933851}
   - component: {fileID: 5272654580693933850}
   - component: {fileID: 5272654580693933853}
+  - component: {fileID: 1778845397371766168}
   m_Layer: 9
   m_Name: Character
   m_TagString: Player
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 826888905
-  m_SortingLayer: 6
+  m_SortingLayerID: -462752949
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 77ba605bbd83f4448bc8683510c3155e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,6 +103,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1778845397371766168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5272654580693933855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0d352638b946198a98fe0709d66f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 5000
+  offset: 0
+  runOnce: 0
 --- !u!1 &5272654581059791491
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  nutritionValue: 0
   target: {fileID: 0}
   NPC: {fileID: 5272654580693933855}
   speed: 1

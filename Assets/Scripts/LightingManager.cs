@@ -13,8 +13,8 @@ public class LightingManager : MonoSingleton<LightingManager>
     [SerializeField] private Light2D globalLight;
     [SerializeField, Range(0, 24)] private float currentTime = 0;
     [SerializeField] private float dayCycleTime = 60;
-    [SerializeField] private float dayIntensity;
-    [SerializeField] private float nightIntensity;
+    [SerializeField] private float dayIntensity = 0.75f;
+    [SerializeField] private float nightIntensity = 0.25f;
     [SerializeField] private IEnumerable<Light2D> _mapLights;
     private bool _day;
     private float _secondCounter;
@@ -24,6 +24,8 @@ public class LightingManager : MonoSingleton<LightingManager>
         globalLight.intensity = nightIntensity;
         _day = false;
         _mapLights = new List<Light2D>();
+        if (globalLight == null)
+            globalLight = FindObjectOfType<Light2D>();
     }
 
     private void Update()

@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 826888905
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,8 +196,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.048847437, y: -0.036635518}
-  m_Size: {x: 0.34124613, y: 0.8656695}
+  m_Offset: {x: -0.051300526, y: -0.28520525}
+  m_Size: {x: 0.2120552, y: 0.3423648}
   m_Direction: 0
 --- !u!1 &7663018033001157120
 GameObject:
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 7663018033001157121}
   - component: {fileID: 7663018033001157122}
   - component: {fileID: 7663018033001157123}
+  - component: {fileID: 1822084626921170270}
   m_Layer: 0
   m_Name: Render
   m_TagString: Player
@@ -250,7 +251,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: c199b501b64bdcd46a08880f46adee9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -268,7 +269,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1957200483
+  m_SortingLayerID: -462752949
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 4000517390913654621, guid: 3d61c1fc78a682841912d3b12dca0942, type: 3}
@@ -301,3 +302,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1822084626921170270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663018033001157120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0d352638b946198a98fe0709d66f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 5000
+  offset: 0
+  runOnce: 0

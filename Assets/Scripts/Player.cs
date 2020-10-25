@@ -8,6 +8,9 @@ using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(HealthBarScript))]
+[RequireComponent(typeof(HungerBarScript))]
+[RequireComponent(typeof(VenomBarScript))]
 public class Player : MonoBehaviour, ICharacter
 {
     private Animator _animator;

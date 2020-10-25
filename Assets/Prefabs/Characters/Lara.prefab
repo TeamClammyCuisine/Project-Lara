@@ -183,9 +183,9 @@ MonoBehaviour:
   canSpit: 1
   maxHealth: 100
   maxHunger: 100
-  hungerSpeed: 5
+  hungerSpeed: 500
   maxVenom: 3
-  venomProjectile: {fileID: 8518596312251427046, guid: a5f4ef71d19374641b3b5f572f0ea4b5, type: 3}
+  venomProjectile: {fileID: 589755762064863078, guid: 3684fa4773a57fe499a04e6b765e91af, type: 3}
   spitPoint: {fileID: 116559310}
   attackRange: 0.1
   BiteAttack: {fileID: 1037356526}

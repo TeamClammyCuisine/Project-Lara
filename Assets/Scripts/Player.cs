@@ -26,6 +26,9 @@ public class Player : MonoBehaviour, ICharacter
     private static readonly int Attacking = Animator.StringToHash("Attacking");
     private static readonly int BiteEffect = Animator.StringToHash("BiteEffect");
 
+    public delegate void PlayerDelegate();
+    public static event PlayerDelegate LaraDied;
+
     public bool canSpit = true;
 
     public float Speed { get; set; }
@@ -240,6 +243,7 @@ public class Player : MonoBehaviour, ICharacter
     {
         _animator.SetBool(Died, true);
         alive = false;
+        LaraDied();
     }
 
     public void TakeDamage(float damage)

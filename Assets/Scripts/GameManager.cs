@@ -6,9 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public GameObject TryAgainWindow;
+    public GameObject Gui;
+
     private void Update()
     {
         
+    }
+
+    void onLaraDied()
+    {
+        Instantiate(TryAgainWindow, Gui.transform);
     }
 
     public void TryAgain()
@@ -19,5 +27,15 @@ public class GameManager : MonoSingleton<GameManager>
     public void GiveUp()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void OnEnable()
+    {
+        Player.LaraDied += onLaraDied;
+    }
+
+    private void OnDisable()
+    {
+        Player.LaraDied -= onLaraDied;
     }
 }

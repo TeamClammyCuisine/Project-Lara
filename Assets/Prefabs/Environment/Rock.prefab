@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5900845587526689814}
   - component: {fileID: 2985614491634697998}
   - component: {fileID: -1008731724122837684}
-  - component: {fileID: -7682299858301408043}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -116,32 +115,3 @@ MonoBehaviour:
   baseOrder: 5000
   offset: 0
   runOnce: 1
---- !u!114 &-7682299858301408043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279874663569652533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 1
-  m_ApplyToSortingLayers: 67744c104bf36ae4
-  m_ShapePath:
-  - {x: -0.3242883, y: -0.27659488, z: 0}
-  - {x: -0.032632172, y: -0.3024752, z: 0}
-  - {x: 0.259024, y: -0.28914595, z: 0}
-  - {x: 0.2861591, y: -0.17445672, z: 0}
-  - {x: 0.18826264, y: 0.013805985, z: 0}
-  - {x: 0.02557826, y: 0.18622899, z: 0}
-  - {x: -0.24647307, y: 0.028088331, z: 0}
-  m_ShapePathHash: -1060425488
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 152100

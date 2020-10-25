@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 805605058179986841}
   - component: {fileID: 4180827555634319425}
   - component: {fileID: 3172452913502730807}
-  - component: {fileID: 9123964714868772677}
   - component: {fileID: 4238840451688620029}
   m_Layer: 0
   m_Name: Tent
@@ -113,34 +112,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &9123964714868772677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3185597951425656596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 67744c104bf36ae4
-  m_ShapePath:
-  - {x: -0.44130898, y: -0.20374927, z: 0}
-  - {x: -0.23902178, y: -0.31913418, z: 0}
-  - {x: 0.21094394, y: -0.31913418, z: 0}
-  - {x: 0.36025882, y: -0.17021139, z: 0}
-  - {x: 0.2233131, y: 0.052828997, z: 0}
-  - {x: -0.008111715, y: 0.3910021, z: 0}
-  m_ShapePathHash: 1968542717
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 111116
 --- !u!114 &4238840451688620029
 MonoBehaviour:
   m_ObjectHideFlags: 0

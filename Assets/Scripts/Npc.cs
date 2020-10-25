@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Resources;
 using Pathfinding;
 using TMPro;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class Npc : MonoBehaviour, ICharacter
 {
@@ -21,6 +23,9 @@ public class Npc : MonoBehaviour, ICharacter
     public float maxHealth = 100;
     bool alive;
 
+    private int timer = 3;
+    private float time = 0;
+    
     public delegate void NpcDelegate();
     public static event NpcDelegate NpcEaten;
     public static event NpcDelegate NpcDied;
@@ -50,6 +55,7 @@ public class Npc : MonoBehaviour, ICharacter
 
     public void Start ()
     {
+        target = GameObject.Find("Lara").transform;
         _animator = NPC.GetComponent<Animator>();
         _seeker = GetComponent<Seeker>();
         Health = maxHealth;
@@ -58,7 +64,7 @@ public class Npc : MonoBehaviour, ICharacter
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         
         
-        _seeker.StartPath( transform.position, target.position, OnPathComplete );
+        //_seeker.StartPath( transform.position, target.position, OnPathComplete );
     }
 
     public void OnPathComplete ( Path p )
@@ -144,46 +150,87 @@ public class Npc : MonoBehaviour, ICharacter
 
     public void FixedUpdate ()
     {
-        if (true) return;
-        //if (path == null)
-        //{
-        //    //We have no path to move after yet
-        //    return;
-        //}
+        if (!alive) return;
+        
+        time += Time.fixedDeltaTime;
 
-        if (_currentWaypoint >= path.vectorPath.Count)
+        if (time > timer)
         {
-            _seeker.StartPath( transform.position, target.position, OnPathComplete );
+            if (IsMovementRandom)
+            {
+                x = Random.Range(-1f, 1f);
+                y = Random.Range(-1f, 1f);
+            }
+
+            time = 0;
         }
 
-        //Direction to the next waypoint
-        var dir = ( path.vectorPath[ _currentWaypoint ] - transform.position ).normalized;
-        
-        var x = dir.x;
-        var y = dir.y;
+
+        var vector = new Vector2(x, y);
+        Debug.Log(vector);
 
         if (x != 0 || y != 0)
             _animator.SetBool(IsWalking, true);
         else
             _animator.SetBool(IsWalking, false);
-        
-        if (x<0)
+
+        if (x < 0)
             NPC.transform.rotation = Quaternion.Euler(0, 180, 0);
-        else if (x>0)
+        else if (x > 0)
             NPC.transform.rotation = Quaternion.Euler(0, 0, 0);
-        
-        
-        Debug.Log(dir);
-        dir *= speed * Time.fixedDeltaTime;
-        
-        transform.Translate( dir );
-        
-        //If we are, proceed to follow the next waypoint
-        if (Vector3.Distance( transform.position, path.vectorPath[ _currentWaypoint ] ) < nextWaypointDistance)
+
+        vector *= speed * Time.fixedDeltaTime;
+
+        transform.Translate(vector);
+
+        var targetDist = (target.position - transform.position).normalized;
+
+        if (math.abs(targetDist.x) <= 0.3f && math.abs(targetDist.y) <= 0.3f)
         {
-            _currentWaypoint++;
+            IsMovementRandom = false;
+            x = targetDist.x;
+            y = targetDist.y;
+            speed = 6;
         }
+        // if (path == null)
+        // {
+        //     //We have no path to move after yet
+        //     return;
+        // }
+        //
+        // if (_currentWaypoint >= path.vectorPath.Count)
+        // {
+        //     _seeker.StartPath( transform.position, target.position, OnPathComplete );
+        // }
+        //
+        // //Direction to the next waypoint
+        // var dir = ( path.vectorPath[ _currentWaypoint ] - transform.position ).normalized;
+        //
+        // var x = dir.x;
+        // var y = dir.y;
+        //
+        // if (x != 0 || y != 0)
+        //     _animator.SetBool(IsWalking, true);
+        // else
+        //     _animator.SetBool(IsWalking, false);
+        //
+        // if (x<0)
+        //     NPC.transform.rotation = Quaternion.Euler(0, 180, 0);
+        // else if (x>0)
+        //     NPC.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //
+        //
+        // dir *= speed * Time.fixedDeltaTime;
+        //
+        // transform.Translate( dir );
+        //
+        // //If we are, proceed to follow the next waypoint
+        // if (Vector3.Distance( transform.position, path.vectorPath[ _currentWaypoint ] ) < nextWaypointDistance)
+        // {
+        //     _currentWaypoint++;
+        // }
     }
 
-
+    private float x, y;
+    private bool IsMovementRandom = true;
 }

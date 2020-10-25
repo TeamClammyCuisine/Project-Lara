@@ -2,7 +2,6 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-using UnityEngine.Serialization;
 
 [ExecuteAlways]
 [RequireComponent(typeof(Light2D))]

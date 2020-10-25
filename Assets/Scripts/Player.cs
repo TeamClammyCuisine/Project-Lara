@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Resources;
-using TMPro;
-using UnityEditor;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(HealthBarScript))]
 [RequireComponent(typeof(HungerBarScript))]

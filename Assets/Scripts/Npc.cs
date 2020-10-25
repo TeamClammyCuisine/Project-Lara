@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Resources;
+﻿using System.Collections;
 using Pathfinding;
-using TMPro;
 using Unity.Mathematics;
-using UnityEditor;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class Npc : MonoBehaviour, ICharacter

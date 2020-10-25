@@ -198,7 +198,7 @@ MonoBehaviour:
   target: {fileID: 0}
   NPC: {fileID: 5272654580693933855}
   speed: 1
-  nextWaypointDistance: 0.01
+  nextWaypointDistance: 0.1
 --- !u!50 &15395244
 Rigidbody2D:
   serializedVersion: 4
@@ -219,7 +219,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &15395245
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

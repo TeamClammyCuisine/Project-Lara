@@ -1,5 +1,5 @@
 {
-    "name": "NpcMovement",
+    "name": "Controllers",
     "maps": [
         {
             "name": "Player",

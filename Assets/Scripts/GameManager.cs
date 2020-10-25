@@ -65,7 +65,7 @@ public class GameManager : MonoSingleton<GameManager>
             case 3:
                 currentZone = 4;
                 BossArrives();
-                LaraDialog(2);
+                LaraDialog(3);
                 currentNpcs = EnemiesOnZone4;
                 EnemyCounter.text = currentNpcs.ToString();
                 break;
@@ -81,7 +81,17 @@ public class GameManager : MonoSingleton<GameManager>
                 LaraDialogBubble.SetActive(true);
                 dialogText.text = "I feel strong enough to spit my acidic venom. It can even melt tree strumps";
                 StartCoroutine(FadeDialog());
-                    break;
+                 break;
+            case 2:
+                LaraDialogBubble.SetActive(true);
+                dialogText.text = "I Heard a loud bang to the west. I should check it out. Still hungry...";
+                StartCoroutine(FadeDialog());
+                break;
+            case 3:
+                LaraDialogBubble.SetActive(true);
+                dialogText.text = "The king of these men, has arrived at the beach. He'll do as desert.";
+                StartCoroutine(FadeDialog());
+                break;
         }
    
     }
@@ -94,6 +104,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     void UnlockZone3()
     {
+
 
     }
 

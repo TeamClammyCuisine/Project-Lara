@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8510716926416397218}
   - component: {fileID: 8510716926416397245}
   - component: {fileID: 8510716926416397219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Caravela
   m_TagString: Untagged
   m_Icon: {fileID: 0}

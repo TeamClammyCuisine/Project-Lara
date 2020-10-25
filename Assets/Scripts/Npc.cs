@@ -31,8 +31,14 @@ public class Npc : MonoBehaviour, ICharacter
     public static event NpcDelegate NpcDied;
     public int nutritionValue;
 
+    public GameObject SwordAttack;
+    public LayerMask enemyLayers;
+    public float attackRange = 0.4f;
     public float AttackDamage { get; set; }
     public float AttackSpeed { get; set; }
+    bool attacking = false;
+    bool aggressive = true;
+
     //The point to move to
     public Transform target;
     private Animator _animator;
@@ -52,6 +58,9 @@ public class Npc : MonoBehaviour, ICharacter
 
     //The waypoint we are currently moving towards
     private int _currentWaypoint = 0;
+
+    private float x, y;
+    private bool IsMovementRandom = true;
 
     public void Start ()
     {
@@ -148,6 +157,26 @@ public class Npc : MonoBehaviour, ICharacter
         //GetComponent<Collider2D>().enabled = false;
     }
 
+    void Attack()
+    {
+        Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(SwordAttack.transform.position, attackRange, enemyLayers);
+        StartCoroutine(AttackEffect());
+        foreach (Collider2D enemyHit in enemiesHit)
+        {
+            enemyHit.GetComponent<Player>().TakeDamage(20);
+        }
+    }
+
+    IEnumerator AttackEffect()
+    {
+        attacking = true;
+        _animator.SetBool(IsWalking, false);
+        _animator.SetBool(IsAttacking, true);
+        yield return new WaitForSeconds(1);
+        _animator.SetBool(IsAttacking, false);
+        attacking = false;
+    }
+
     public void FixedUpdate ()
     {
         if (!alive) return;
@@ -164,7 +193,6 @@ public class Npc : MonoBehaviour, ICharacter
 
             time = 0;
         }
-
 
         var vector = new Vector2(x, y);
         Debug.Log(vector);
@@ -185,12 +213,13 @@ public class Npc : MonoBehaviour, ICharacter
 
         var targetDist = (target.position - transform.position).normalized;
 
-        if (math.abs(targetDist.x) <= 0.3f && math.abs(targetDist.y) <= 0.3f)
+        if ((math.abs(targetDist.x) <= 0.3f && math.abs(targetDist.y) <= 0.3f) && aggressive)
         {
             IsMovementRandom = false;
             x = targetDist.x;
             y = targetDist.y;
             speed = 6;
+            if(!attacking) Attack();
         }
         // if (path == null)
         // {
@@ -231,6 +260,19 @@ public class Npc : MonoBehaviour, ICharacter
         // }
     }
 
-    private float x, y;
-    private bool IsMovementRandom = true;
+    private void OnEnable()
+    {
+        Player.LaraDied += onLaraDied;
+    }
+
+    private void OnDisable()
+    {
+        Player.LaraDied -= onLaraDied;
+    }
+
+
+    void onLaraDied()
+    {
+        aggressive = false;
+    }
 }

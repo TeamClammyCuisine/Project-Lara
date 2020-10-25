@@ -241,9 +241,11 @@ public class Player : MonoBehaviour, ICharacter
             //_animator.SetBool(Eating, false);
             Hunger += 50;
             Venom = maxVenom;
+            Health += 10;
             if (Hunger > maxHunger) Hunger = maxHunger;
             HungerBar.SetHunger(Hunger);
             VenomBar.SetVenom(Venom);
+            HealthBar.SetHealth(Health);
         }
     }
 

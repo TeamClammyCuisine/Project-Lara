@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116559311}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 1037356527}
   - component: {fileID: 1037356528}
   - component: {fileID: 1037356529}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiteAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7663018031739593554}
   - component: {fileID: 7663018031739593548}
   - component: {fileID: 7663018031739593555}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lara
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   maxVenom: 3
   venomProjectile: {fileID: 589755762064863078, guid: 3684fa4773a57fe499a04e6b765e91af, type: 3}
   spitPoint: {fileID: 116559310}
-  attackRange: 0.1
+  attackRange: 0.3
   BiteAttack: {fileID: 1037356526}
   biteSpeed: 0.7
   enemyLayers:
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 7663018033001157122}
   - component: {fileID: 7663018033001157123}
   - component: {fileID: 1822084626921170270}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Render
   m_TagString: Player
   m_Icon: {fileID: 0}

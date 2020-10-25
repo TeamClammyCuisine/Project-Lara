@@ -33,6 +33,14 @@ public class @Controllers : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Spit"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b89747b-b752-42f7-a346-eddc791739f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -101,6 +109,17 @@ public class @Controllers : IInputActionCollection, IDisposable
                     ""action"": ""Atack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4469206d-22c0-4a14-9b78-db02b602c9b3"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Spit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -123,6 +142,7 @@ public class @Controllers : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Atack = m_Player.FindAction("Atack", throwIfNotFound: true);
+        m_Player_Spit = m_Player.FindAction("Spit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -174,12 +194,14 @@ public class @Controllers : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Atack;
+    private readonly InputAction m_Player_Spit;
     public struct PlayerActions
     {
         private @Controllers m_Wrapper;
         public PlayerActions(@Controllers wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Atack => m_Wrapper.m_Player_Atack;
+        public InputAction @Spit => m_Wrapper.m_Player_Spit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -195,6 +217,9 @@ public class @Controllers : IInputActionCollection, IDisposable
                 @Atack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAtack;
                 @Atack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAtack;
                 @Atack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAtack;
+                @Spit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpit;
+                @Spit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpit;
+                @Spit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -205,6 +230,9 @@ public class @Controllers : IInputActionCollection, IDisposable
                 @Atack.started += instance.OnAtack;
                 @Atack.performed += instance.OnAtack;
                 @Atack.canceled += instance.OnAtack;
+                @Spit.started += instance.OnSpit;
+                @Spit.performed += instance.OnSpit;
+                @Spit.canceled += instance.OnSpit;
             }
         }
     }
@@ -222,5 +250,6 @@ public class @Controllers : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnAtack(InputAction.CallbackContext context);
+        void OnSpit(InputAction.CallbackContext context);
     }
 }

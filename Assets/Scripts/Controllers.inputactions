@@ -1,5 +1,5 @@
 {
-    "name": "NpcMovement",
+    "name": "Controllers",
     "maps": [
         {
             "name": "Player",
@@ -17,6 +17,14 @@
                     "name": "Atack",
                     "type": "Button",
                     "id": "79e63cfb-1bd3-4e18-8057-eb1af7bbff79",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Spit",
+                    "type": "Button",
+                    "id": "5b89747b-b752-42f7-a346-eddc791739f9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -86,6 +94,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Atack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4469206d-22c0-4a14-9b78-db02b602c9b3",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Spit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

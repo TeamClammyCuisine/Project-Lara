@@ -43,3 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155f008c5350ddb46858c84a44fa305e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TryAgainWindow: {fileID: 6038428383869070881, guid: 950c4df235efba94cbb5d82cf4fa0a11, type: 3}
+  Gui: {fileID: 0}
+  PoisonBar: {fileID: 0}
+  LaraDialogBubble: {fileID: 0}
+  EnemyCounter: {fileID: 0}
+  EnemiesOnZone1: 5
+  EnemiesOnZone2: 10
+  EnemiesOnZone3: 15
+  EnemiesOnZone4: 5

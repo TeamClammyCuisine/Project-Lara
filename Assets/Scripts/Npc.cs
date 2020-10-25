@@ -23,6 +23,7 @@ public class Npc : MonoBehaviour, ICharacter
 
     public delegate void NpcDelegate();
     public static event NpcDelegate NpcEaten;
+    public static event NpcDelegate NpcDied;
     public int nutritionValue;
 
     public float AttackDamage { get; set; }
@@ -80,6 +81,16 @@ public class Npc : MonoBehaviour, ICharacter
         else getEaten();
     }
 
+    public void TakeVenomDamage(float damage)
+    {
+        if (alive)
+        {
+            StartCoroutine(playDamageEffects());
+            Health -= damage;
+            if (Health <= 0) Melt();
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         if (alive)
@@ -106,10 +117,28 @@ public class Npc : MonoBehaviour, ICharacter
 
     }
 
+    IEnumerator MeltEffect()
+    {
+        //_animator.SetBool(Melting, true);
+        //playParticleEffectBlood
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+    }
+
     void Die()
     {
         _animator.SetTrigger("Dead");
+        NpcDied();
         alive = false;
+        //GetComponent<Collider2D>().enabled = false;
+    }
+
+    void Melt()
+    {
+        _animator.SetTrigger("Dead");
+        NpcDied();
+        alive = false;
+        StartCoroutine(MeltEffect());
         //GetComponent<Collider2D>().enabled = false;
     }
 

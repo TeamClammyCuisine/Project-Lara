@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4270924183452739379}
   - component: {fileID: 4270924183452739378}
   - component: {fileID: 1231044164388964857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4270924183692997741}
   - component: {fileID: 4270924183692997739}
   - component: {fileID: 4270924183692997738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: King
   m_TagString: Untagged
   m_Icon: {fileID: 0}

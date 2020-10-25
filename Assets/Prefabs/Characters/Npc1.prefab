@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5272654580693933850}
   - component: {fileID: 5272654580693933853}
   - component: {fileID: 1778845397371766168}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5272654581059791488}
   - component: {fileID: 15395244}
   - component: {fileID: 15395245}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Npc1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5297667498070923945}
   - component: {fileID: 8972176757316387653}
   - component: {fileID: 71071105595285359}
+  - component: {fileID: 1246291682439101292}
+  - component: {fileID: 6100929965123200326}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -69,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1957200483
+  m_SortingLayerID: -462752949
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ef0eff04f5a2034bbaee795b688a3cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,6 +98,53 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03454584, y: -0.2963123}
-  m_Size: {x: 0.21028847, y: 0.4227721}
+  m_Offset: {x: -0.065, y: -0.35494757}
+  m_Size: {x: 0.11, y: 0.20010488}
   m_Direction: 0
+--- !u!114 &1246291682439101292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033727081186280865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000efaa08db9d7d578baf32d53a859a909a793550fec9524931
+  m_ShapePath:
+  - {x: -0.14563471, y: -0.45064288, z: 0}
+  - {x: 0.15355413, y: -0.44325143, z: 0}
+  - {x: 0.03367113, y: -0.28914616, z: 0}
+  - {x: 0.041590672, y: -0.045225415, z: 0}
+  - {x: 0.4771632, y: 0.032385737, z: 0}
+  - {x: 0.5376502, y: 0.40998918, z: 0}
+  - {x: 0.1089064, y: 0.43522447, z: 0}
+  - {x: -0.09700081, y: 0.37609226, z: 0}
+  - {x: -0.4861735, y: 0.20302609, z: 0}
+  - {x: -0.13659823, y: -0.015659265, z: 0}
+  m_ShapePathHash: 2143759882
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 222604
+--- !u!114 &6100929965123200326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033727081186280865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0d352638b946198a98fe0709d66f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 5000
+  offset: 0
+  runOnce: 1

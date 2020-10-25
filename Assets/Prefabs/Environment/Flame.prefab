@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5106064887030447151}
   - component: {fileID: 5106064887030447150}
   - component: {fileID: 5106064887030447148}
+  - component: {fileID: 8184924119303800984}
   m_Layer: 8
   m_Name: Flame
   m_TagString: Untagged
@@ -70,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -620188945
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayerID: -462752949
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 4987901684691990599, guid: 6a870838dc3920743b1a483f22921df1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,6 +104,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8184924119303800984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106064887030447153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0d352638b946198a98fe0709d66f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 5000
+  offset: 0
+  runOnce: 1
 --- !u!1 &5106064887857900777
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +168,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0.43618035, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.131
-  m_ApplyToSortingLayers: 00000000efaa08db9d7d578baf32d53a859a909a793550fec9524931
+  m_ApplyToSortingLayers: 67744c104bf36ae4
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0

@@ -29,6 +29,7 @@ public class GameManager : MonoSingleton<GameManager>
         currentZone = 1;
         _enemyGenerator = GetComponent<EnemyGenerator>();
         _enemyGenerator.Generate(currentZone, EnemiesOnZone1);
+        LaraDialog(0);
     }
     
     void onLaraDied()
@@ -82,19 +83,25 @@ public class GameManager : MonoSingleton<GameManager>
         var dialogText = LaraDialogBubble.GetComponent<Text>();
         switch (index)
         {
+            case 0:
+                LaraDialogBubble.SetActive(true);
+                dialogText.text = "I should for look an adequate meal (Arrow Keys) and I can muster the strength to bite them (Space)." +
+                                  "My favourite bite is my last, when I consume them!";
+                StartCoroutine(FadeDialog());
+                break;
             case 1:
                 LaraDialogBubble.SetActive(true);
-                dialogText.text = "I feel strong enough to spit my acidic venom. It can even melt tree strumps";
+                dialogText.text = "Ah, my acidic venom has returned (Left shift). I can use this to melt tree strumps";
                 StartCoroutine(FadeDialog());
                  break;
             case 2:
                 LaraDialogBubble.SetActive(true);
-                dialogText.text = "I Heard a loud bang to the west. I should check it out. Still hungry...";
+                dialogText.text = "I Heard a loud bang to the west. I should check it out... My stomach still rumbles for more!";
                 StartCoroutine(FadeDialog());
                 break;
             case 3:
                 LaraDialogBubble.SetActive(true);
-                dialogText.text = "The king of these men, has arrived at the beach. He'll do as desert.";
+                dialogText.text = "The king of these fools has arrived at the beach. He'll certainly make for a great dessert.";
                 StartCoroutine(FadeDialog());
                 break;
         }

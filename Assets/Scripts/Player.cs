@@ -168,14 +168,14 @@ public class Player : MonoBehaviour, ICharacter
                 _animator.SetBool(MovingDown, true);
                 facing = "down";
                 spitPoint.transform.position = _transform.position;
-                BiteAttack.transform.position = _transform.position + new Vector3(0,-0.5f - attackRange);
+                BiteAttack.transform.position = _transform.position + new Vector3(0,-0.5f);
             }
             else if (y > 0)
             {
                 _animator.SetBool(MovingUp, true);
                 facing = "up";
                 spitPoint.transform.position = _transform.position;
-                BiteAttack.transform.position = _transform.position + new Vector3(0,0.5f + attackRange);
+                BiteAttack.transform.position = _transform.position + new Vector3(0,0.5f);
             }
             else
             {
@@ -189,14 +189,14 @@ public class Player : MonoBehaviour, ICharacter
             if (x < 0)
             {
                 BiteAttack.transform.position = _transform.position + new Vector3(-0.3f, 0.273f,0);
-                BiteAttack.transform.position = _transform.position + new Vector3(-0.4f - attackRange, 0); ;
+                BiteAttack.transform.position = _transform.position + new Vector3(-0.4f, 0); ;
                 facing = "left";
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else if (x > 0)
             {
                 spitPoint.transform.position = _transform.position + new Vector3(0.3f, 0.273f, 0);
-                BiteAttack.transform.position = _transform.position + new Vector3(0.4f + attackRange, 0);
+                BiteAttack.transform.position = _transform.position + new Vector3(0.4f, 0);
                 facing = "right";
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
